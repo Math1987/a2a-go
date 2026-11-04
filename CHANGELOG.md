@@ -1,5 +1,42 @@
 # Changelog
 
+## [2.8.0](https://github.com/a2aproject/a2a-go/compare/v2.7.0...v2.8.0) (2026-11-04)
+
+
+### Features
+
+* **a2aacp:** expose the lifetime of an ACP prompt with Config.Turn ([#530](https://github.com/a2aproject/a2a-go/issues/530)) ([1c687ee](https://github.com/a2aproject/a2a-go/commit/1c687ee54d2f5d894ff31cb760dcaa23ccdd8644)), closes [#529](https://github.com/a2aproject/a2a-go/issues/529)
+* **a2agrpc:** add GRPCConnectionPool for gRPC client connection reuse (fixes [#109](https://github.com/a2aproject/a2a-go/issues/109)) ([#382](https://github.com/a2aproject/a2a-go/issues/382)) ([a2411f7](https://github.com/a2aproject/a2a-go/commit/a2411f7a6fc2753f364e37b999f128ac5ddec29d))
+* acp agent executor (part 1) ([#491](https://github.com/a2aproject/a2a-go/issues/491)) ([1d2031c](https://github.com/a2aproject/a2a-go/commit/1d2031cb9fcc78728da9006ed89e3fc33fa9ac0c))
+* acp agent executor (part 2) ([#492](https://github.com/a2aproject/a2a-go/issues/492)) ([75e34bd](https://github.com/a2aproject/a2a-go/commit/75e34bd09f3c38336345e77df972c649a73f5793))
+* acp agent executor (part 3) ([#493](https://github.com/a2aproject/a2a-go/issues/493)) ([c60c40e](https://github.com/a2aproject/a2a-go/commit/c60c40e583edd8da5e6242705c73d7d04b3b961d))
+* acp agent executor (part 4) ([#494](https://github.com/a2aproject/a2a-go/issues/494)) ([929512f](https://github.com/a2aproject/a2a-go/commit/929512f7172d687c08c6390376bf2d713e7b1fbf))
+* implement structured input extension ([#490](https://github.com/a2aproject/a2a-go/issues/490)) ([367f987](https://github.com/a2aproject/a2a-go/commit/367f987e7adb79c6c23ca7f6ede826683459ab30))
+
+
+### Bug Fixes
+
+* **a2aclient:** honor configured HTTP authentication schemes ([#502](https://github.com/a2aproject/a2a-go/issues/502)) ([413de0c](https://github.com/a2aproject/a2a-go/commit/413de0c54d75f3b6c67a20ca9f23aff183bf6596))
+* **a2aclient:** normalize service param keys set by the client and AuthInterceptor ([#479](https://github.com/a2aproject/a2a-go/issues/479)) ([96f4df0](https://github.com/a2aproject/a2a-go/commit/96f4df04259839356aa945017e5edfb209d73e1c))
+* **a2acrypto:** reject malformed Unicode before signing ([#450](https://github.com/a2aproject/a2a-go/issues/450)) ([ec6cb14](https://github.com/a2aproject/a2a-go/commit/ec6cb14585166e9b85356b115ce3a70d1129eb79))
+* **a2aevent:** preserve input-required history order ([#501](https://github.com/a2aproject/a2a-go/issues/501)) ([72f94a3](https://github.com/a2aproject/a2a-go/commit/72f94a30cb09130613a0af0361d73e76a9b87ca1))
+* **a2aevent:** recover the whole artifact when it changes in place ([#485](https://github.com/a2aproject/a2a-go/issues/485)) ([4d61739](https://github.com/a2aproject/a2a-go/commit/4d61739ebfeedd95e7c6bb34214b3c14feb204f1))
+* **a2a:** round-trip null data and nil raw parts through JSON ([#513](https://github.com/a2aproject/a2a-go/issues/513)) ([186decc](https://github.com/a2aproject/a2a-go/commit/186decc44b63443f355fa413f723f61580513e5d))
+* **a2asrv:** preserve escaped tenant REST paths ([#514](https://github.com/a2aproject/a2a-go/issues/514)) ([f86cf6c](https://github.com/a2aproject/a2a-go/commit/f86cf6c0f485b910829655cc41764f127fb488a8))
+* **a2asrv:** reject HEAD before creating task subscriptions ([#481](https://github.com/a2aproject/a2a-go/issues/481)) ([e641e3c](https://github.com/a2aproject/a2a-go/commit/e641e3c29902c3228292aebe9c835b82501d1d12))
+* **a2asrv:** split comma-separated A2A-Extensions values ([#519](https://github.com/a2aproject/a2a-go/issues/519)) ([db83820](https://github.com/a2aproject/a2a-go/commit/db838203cd8561b75509c4d3e8c2b57cb4e11f1d)), closes [#516](https://github.com/a2aproject/a2a-go/issues/516)
+* **client:** accept cached status and artifact stream events ([#508](https://github.com/a2aproject/a2a-go/issues/508)) ([ea78132](https://github.com/a2aproject/a2a-go/commit/ea78132902dec2079242489c27942177bc008adc))
+* **client:** honor streaming interceptor error recovery ([#507](https://github.com/a2aproject/a2a-go/issues/507)) ([737b626](https://github.com/a2aproject/a2a-go/commit/737b626ae87515fa995347502f387fd352538d3d))
+* **client:** keep propagated tenants local to each call ([#495](https://github.com/a2aproject/a2a-go/issues/495)) ([0eaf017](https://github.com/a2aproject/a2a-go/commit/0eaf0170bab30e3ba0cbe2e4b6007ce7f7b780fc))
+* **client:** preserve escaped REST path segments ([#488](https://github.com/a2aproject/a2a-go/issues/488)) ([8880d8f](https://github.com/a2aproject/a2a-go/commit/8880d8fd244e9637164f5bb757ccb51ecf8d0828))
+* don't fail CancelTask when the canceled execution ends first ([#521](https://github.com/a2aproject/a2a-go/issues/521)) ([1613ae6](https://github.com/a2aproject/a2a-go/commit/1613ae6eb470f3a21c0954becc6319f7de13151e)), closes [#518](https://github.com/a2aproject/a2a-go/issues/518)
+* don't move a task to FAILED when cancelation retries run out ([#522](https://github.com/a2aproject/a2a-go/issues/522)) ([247933b](https://github.com/a2aproject/a2a-go/commit/247933b5ea288ff09fa81798512ba7bb2fa0d646))
+* **jsonrpc:** return empty result for successful push config deletion ([#525](https://github.com/a2aproject/a2a-go/issues/525)) ([42d0738](https://github.com/a2aproject/a2a-go/commit/42d07388ffced9d1a206fa3990fe28e76520800f))
+* pass CancelTask metadata over REST ([#520](https://github.com/a2aproject/a2a-go/issues/520)) ([a104b2e](https://github.com/a2aproject/a2a-go/commit/a104b2e4087d35f912ef5a698e2610af65c5a4db)), closes [#517](https://github.com/a2aproject/a2a-go/issues/517)
+* **pbconv:** preserve JSON data part values ([#503](https://github.com/a2aproject/a2a-go/issues/503)) ([7c040e0](https://github.com/a2aproject/a2a-go/commit/7c040e07379f73fb2588dc04540b94cb0a745806))
+* **push:** cap push notification configs per task ([#405](https://github.com/a2aproject/a2a-go/issues/405)) ([6bb5a68](https://github.com/a2aproject/a2a-go/commit/6bb5a688cbce3f8d3257b8ec6135f9c9d095bfd4))
+* **sse:** ignore a leading UTF-8 byte order mark ([#511](https://github.com/a2aproject/a2a-go/issues/511)) ([248f628](https://github.com/a2aproject/a2a-go/commit/248f628fc653524143e14e17cdfe32985fb639d0))
+
 ## [2.7.0](https://github.com/a2aproject/a2a-go/compare/v2.6.0...v2.7.0) (2026-10-21)
 
 
